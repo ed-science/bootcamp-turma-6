@@ -25,7 +25,7 @@ def create_stack(stack_name, template_body, **kwargs):
     )
 
     cloudformation_client.get_waiter('stack_exists').wait(StackName=stack_name)
-    logging.info(f'CREATE COMPLETE')
+    logging.info('CREATE COMPLETE')
 
 
 def update_stack(stack_name, template_body, **kwargs):
@@ -47,7 +47,7 @@ def update_stack(stack_name, template_body, **kwargs):
     )
 
     cloudformation_client.get_waiter('stack_exists').wait(StackName=stack_name)
-    logging.info(f'UPDATE COMPLETE')
+    logging.info('UPDATE COMPLETE')
 
 
 def get_existing_stacks():
@@ -78,7 +78,7 @@ def create_or_update_stack():
 
 
 def renderiza_template():
-    logging.info(f'RENDERING JINJA')
+    logging.info('RENDERING JINJA')
     with open(_get_abs_path('redshift.yaml.j2'), 'r') as f:
         redshift_yaml = f.read()
 
@@ -91,7 +91,7 @@ def renderiza_template():
 
     with open(_get_abs_path('redshift.yaml'), 'w') as f:
         f.write(redshift_rendered)
-    logging.info(f'JINJA RENDERED')
+    logging.info('JINJA RENDERED')
 
 
 if __name__ == '__main__':

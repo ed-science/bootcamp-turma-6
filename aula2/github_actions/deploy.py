@@ -22,7 +22,7 @@ def create_stack(stack_name, template_body, **kwargs):
     )
 
     cloudformation_client.get_waiter('stack_exists').wait(StackName=stack_name)
-    logging.info(f'CREATE COMPLETE')
+    logging.info('CREATE COMPLETE')
 
 
 def update_stack(stack_name, template_body, **kwargs):
@@ -44,7 +44,7 @@ def update_stack(stack_name, template_body, **kwargs):
     )
 
     cloudformation_client.get_waiter('stack_exists').wait(StackName=stack_name)
-    logging.info(f'UPDATE COMPLETE')
+    logging.info('UPDATE COMPLETE')
 
 
 def get_existing_stacks():
